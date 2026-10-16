@@ -1,0 +1,242 @@
+
+.legal-page {
+    margin: 0;
+    background: var(--bg, #FBF8F3);
+    color: var(--text, #2C2430);
+    font-family: "DM Sans", sans-serif;
+}
+
+.legal-wrapper {
+    width: min(100% - 48px, 900px);
+    margin: 0 auto;
+    padding: 28px 0 55px;
+}
+
+.legal-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--primary-color, #380F52);
+    text-decoration: none;
+    font: 700 24px "Playfair Display", serif;
+}
+
+.legal-brand img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+}
+
+.legal-brand span span {
+    color: var(--secondary-color, #D4AF5A);
+}
+
+.legal-heading {
+    padding: 60px 0 35px;
+    border-bottom: 1px solid var(--border, #E5D9E0);
+}
+
+.legal-heading .eyebrow {
+    color: var(--secondary-color, #D4AF5A);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+}
+
+.legal-heading h1 {
+    margin: 12px 0;
+    color: var(--primary-color, #380F52);
+    font: 600 clamp(36px, 5vw, 54px)/1.15 "Playfair Display", serif;
+}
+
+.legal-heading h1 em {
+    color: var(--secondary-color, #D4AF5A);
+}
+
+.legal-heading > p:not(.eyebrow) {
+    color: var(--muted, #746B78);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.legal-updated {
+    display: inline-block;
+    margin-top: 10px;
+    color: var(--muted, #746B78);
+    font-size: 12px;
+}
+
+.legal-toc {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 24px 0;
+    border-bottom: 1px solid var(--border, #E5D9E0);
+}
+
+.legal-toc strong {
+    flex-basis: 100%;
+    margin-bottom: 4px;
+    color: var(--primary-color, #380F52);
+    font-size: 14px;
+}
+
+.legal-toc a {
+    padding: 8px 12px;
+    border: 1px solid var(--border, #E5D9E0);
+    border-radius: 30px;
+    color: var(--muted, #746B78);
+    text-decoration: none;
+    font-size: 12px;
+    transition: color .25s ease, background .25s ease, border-color .25s ease;
+}
+
+.legal-toc a:hover {
+    background: var(--primary-color, #380F52);
+    border-color: var(--primary-color, #380F52);
+    color: #fff;
+}
+
+.legal-content {
+    padding-top: 12px;
+}
+
+.legal-content section {
+    padding: 25px 0;
+    border-bottom: 1px solid var(--border, #E5D9E0);
+    scroll-margin-top: 24px;
+}
+
+.legal-content h2 {
+    margin: 0 0 12px;
+    color: var(--primary-color, #380F52);
+    font: 600 23px/1.35 "Playfair Display", serif;
+}
+
+.legal-content p,
+.legal-content li {
+    color: var(--muted, #746B78);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.legal-content p {
+    margin: 0 0 12px;
+}
+
+.legal-content p:last-child {
+    margin-bottom: 0;
+}
+
+.legal-content ul {
+    padding-left: 22px;
+}
+
+.legal-content li {
+    padding-left: 4px;
+    margin: 7px 0;
+}
+
+.legal-content a {
+    color: var(--primary-color, #380F52);
+    text-underline-offset: 4px;
+}
+
+.legal-bottom {
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    padding-top: 28px;
+}
+
+.legal-bottom a {
+    color: var(--primary-color, #380F52);
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.legal-bottom a:hover {
+    color: var(--secondary-color, #D4AF5A);
+}
+
+@media (max-width: 600px) {
+    .legal-wrapper {
+        width: min(100% - 32px, 900px);
+        padding-top: 18px;
+    }
+
+    .legal-heading {
+        padding-top: 42px;
+    }
+
+    .legal-content h2 {
+        font-size: 21px;
+    }
+
+    .legal-bottom {
+        flex-direction: column;
+    }
+}
+
+/* Theme and RTL controls for pages without a header */
+.utility-controls {
+  position: fixed;
+  top: 24px;
+  right: 28px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 9999;
+  direction: ltr;
+}
+
+.utility-controls .icon-btn {
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--primary-color);
+  cursor: pointer;
+  transition: background .35s ease,
+              color .35s ease,
+              transform .35s ease;
+}
+
+.utility-controls .icon-btn:hover {
+  background: var(--secondary-color);
+  color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+.utility-controls .icon-btn svg {
+  width: 19px;
+  height: 19px;
+}
+
+html[dir="rtl"] .utility-controls {
+  right: auto;
+  left: 28px;
+}
+
+@media (max-width: 768px) {
+  .utility-controls {
+    top: 14px;
+    right: 14px;
+    gap: 8px;
+  }
+
+  html[dir="rtl"] .utility-controls {
+    right: auto;
+    left: 14px;
+  }
+
+  .utility-controls .icon-btn {
+    width: 40px;
+    height: 40px;
+  }
+}

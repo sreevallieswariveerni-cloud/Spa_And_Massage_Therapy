@@ -1,0 +1,2345 @@
+/* =====================================================
+   AURA SPA - TREATMENTS PAGE
+   Uses existing style.css variables.
+   NO ROOT VARIABLES.
+   NO HEADER.
+   NO FOOTER.
+===================================================== */
+
+.treatments-page{
+    width:100%;
+    overflow:hidden;
+    background:var(--bg);
+    color:var(--text);
+    font-family:"DM Sans", sans-serif;
+}
+
+.treatments-page *,
+.treatments-page *::before,
+.treatments-page *::after{
+    box-sizing:border-box;
+}
+
+
+/* =====================================================
+   COMMON CONTAINER
+===================================================== */
+
+.tr-container{
+    width:min(1240px, calc(100% - 96px));
+    margin:0 auto;
+}
+
+.tr-section{
+    padding:85px 0;
+}
+
+
+/* =====================================================
+   TYPOGRAPHY
+===================================================== */
+
+.tr-eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+
+    color:var(--secondary-color);
+
+    font-size:11px;
+    font-weight:700;
+
+    letter-spacing:3px;
+    text-transform:uppercase;
+}
+
+.tr-eyebrow::before{
+    content:"";
+
+    width:38px;
+    height:1px;
+
+    background:var(--secondary-color);
+}
+
+.tr-section h2{
+    margin:14px 0 20px;
+
+    color:var(--primary-color);
+
+    font-family:"Playfair Display", serif;
+
+    font-size:clamp(42px,5vw,68px);
+    line-height:.98;
+
+    letter-spacing:-2px;
+}
+
+.tr-section h2 em{
+    color:var(--secondary-color);
+    font-weight:500;
+}
+
+.tr-section p{
+    color:var(--muted);
+    line-height:1.8;
+}
+
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.tr-btn{
+    min-height:48px;
+
+    padding:0 22px;
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    gap:10px;
+
+    border-radius:var(--btn-radius);
+
+    text-decoration:none;
+
+    font-size:13px;
+    font-weight:700;
+
+    transition:
+        background .3s ease,
+        color .3s ease,
+        border .3s ease,
+        transform .3s ease;
+}
+
+.tr-btn span{
+    font-size:17px;
+
+    transition:transform .3s ease;
+}
+
+.tr-btn:hover span{
+    transform:translate(3px,-3px);
+}
+
+.tr-btn-primary{
+    background:var(--secondary-color);
+    color:var(--primary-color);
+
+    border:1px solid var(--secondary-color);
+}
+
+.tr-btn-primary:hover{
+    background:var(--primary-color);
+    border-color:var(--primary-color);
+    color:#fff;
+
+    transform:translateY(-3px);
+}
+
+.tr-btn-outline{
+    background:transparent;
+
+    color:#fff;
+
+    border:1px solid rgba(255,255,255,.65);
+}
+
+.tr-btn-outline:hover{
+    background:#fff;
+    color:var(--primary-color);
+
+    transform:translateY(-3px);
+}
+
+.tr-purple-btn{
+    background:var(--primary-color);
+    border-color:var(--primary-color);
+    color:#fff;
+
+    margin-top:25px;
+}
+
+.tr-purple-btn:hover{
+    background:var(--secondary-color);
+    border-color:var(--secondary-color);
+    color:var(--primary-color);
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.tr-hero{
+    position:relative;
+
+    min-height:calc(100vh - 84px);
+
+    display:flex;
+    align-items:center;
+
+    overflow:hidden;
+    isolation:isolate;
+}
+
+.tr-hero-image{
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    object-position:center;
+
+    z-index:-3;
+}
+
+.tr-hero-overlay{
+    position:absolute;
+
+    inset:0;
+
+    z-index:-2;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(32,7,43,.95) 0%,
+            rgba(56,15,82,.78) 42%,
+            rgba(56,15,82,.20) 100%
+        );
+}
+
+.tr-hero-content{
+    padding-top:30px;
+    padding-bottom:70px;
+}
+
+.tr-hero h1{
+    max-width:800px;
+
+    margin:20px 0;
+
+    color:#fff;
+
+    font-family:"Playfair Display",serif;
+
+    font-size:clamp(58px,7vw,100px);
+
+    line-height:.9;
+
+    letter-spacing:-4px;
+}
+
+.tr-hero h1 em{
+    display:block;
+
+    color:var(--secondary-color);
+
+    font-weight:500;
+}
+
+.tr-hero p{
+    max-width:570px;
+
+    margin:0 0 28px;
+
+    color:rgba(255,255,255,.85);
+
+    font-size:16px;
+
+    line-height:1.75;
+}
+
+.tr-hero-buttons{
+    display:flex;
+    flex-wrap:wrap;
+
+    gap:12px;
+}
+
+.tr-hero-bottom{
+    position:absolute;
+
+    right:48px;
+    bottom:42px;
+
+    width:185px;
+
+    padding:18px;
+
+    border:1px solid rgba(255,255,255,.3);
+
+    border-radius:14px;
+
+    background:rgba(35,7,47,.35);
+
+    backdrop-filter:blur(12px);
+
+    color:#fff;
+}
+
+.tr-hero-bottom span{
+    color:var(--secondary-color);
+
+    font-size:12px;
+    font-weight:700;
+}
+
+.tr-hero-bottom p{
+    margin:7px 0 0;
+
+    color:#fff;
+
+    font-size:12px;
+    line-height:1.5;
+}
+
+
+/* =====================================================
+   INTRO
+===================================================== */
+
+.tr-intro{
+    border-bottom:1px solid var(--border);
+}
+
+.tr-intro-grid{
+    display:grid;
+
+    grid-template-columns:70px minmax(0,1fr) 290px;
+
+    gap:40px;
+
+    align-items:center;
+}
+
+.tr-number{
+    color:var(--secondary-color);
+
+    font-size:12px;
+    font-weight:700;
+}
+
+.tr-intro-content{
+    max-width:760px;
+}
+
+.tr-intro-content h2{
+    max-width:750px;
+}
+
+.tr-intro-content p{
+    max-width:680px;
+
+    margin:0;
+
+    font-size:15px;
+}
+
+.tr-intro-note{
+    border-left:1px solid var(--border);
+
+    padding-left:28px;
+}
+
+.tr-intro-note span{
+    display:block;
+
+    width:35px;
+    height:1px;
+
+    margin-bottom:15px;
+
+    background:var(--secondary-color);
+}
+
+.tr-intro-note p{
+    margin:0;
+
+    font-family:"Playfair Display",serif;
+
+    font-size:14px;
+
+    line-height:1.8;
+}
+
+
+/* =====================================================
+   COLLECTION
+===================================================== */
+
+.tr-section-heading{
+    display:grid;
+
+    grid-template-columns:1fr 390px;
+
+    gap:60px;
+
+    align-items:end;
+
+    margin-bottom:45px;
+}
+
+.tr-section-heading h2{
+    margin-bottom:0;
+}
+
+.tr-section-heading > p{
+    margin:0 0 6px;
+
+    font-size:14px;
+}
+
+.tr-treatment-grid{
+    display:grid;
+
+    grid-template-columns:repeat(2,minmax(0,1fr));
+
+    gap:24px;
+}
+
+.tr-treatment-card{
+    overflow:hidden;
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:0 0 18px 18px;
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
+}
+
+.tr-treatment-card:hover{
+    transform:translateY(-6px);
+
+    border-color:var(--secondary-color);
+
+    box-shadow:var(--shadow-lg);
+}
+
+.tr-treatment-large{
+    grid-row:span 2;
+}
+
+.tr-treatment-image{
+    position:relative;
+
+    height:290px;
+
+    overflow:hidden;
+}
+
+.tr-treatment-large .tr-treatment-image{
+    height:405px;
+}
+
+.tr-treatment-image img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    transition:transform .7s ease;
+}
+
+.tr-treatment-card:hover .tr-treatment-image img{
+    transform:scale(1.05);
+}
+
+.tr-card-number{
+    position:absolute;
+
+    top:18px;
+    left:18px;
+
+    width:43px;
+    height:43px;
+
+    display:grid;
+    place-items:center;
+
+    border:1px solid #fff;
+
+    border-radius:50%;
+
+    background:rgba(56,15,82,.85);
+
+    color:#fff;
+
+    font-family:"Playfair Display",serif;
+}
+
+.tr-card-icon{
+    position:absolute;
+
+    right:18px;
+    bottom:18px;
+
+    width:47px;
+    height:47px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:50%;
+
+    background:var(--secondary-color);
+
+    color:var(--primary-color);
+
+    transition:transform .3s ease;
+}
+
+.tr-treatment-card:hover .tr-card-icon{
+    transform:rotate(-8deg) scale(1.08);
+}
+
+.tr-card-icon svg{
+    width:19px;
+}
+
+.tr-treatment-content{
+    padding:25px 28px 28px;
+}
+
+.tr-mini{
+    color:var(--secondary-color);
+
+    font-size:10px;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+}
+
+.tr-treatment-content h3{
+    margin:9px 0 7px;
+
+    color:var(--primary-color);
+
+    font-family:"Playfair Display",serif;
+
+    font-size:27px;
+}
+
+.tr-treatment-content p{
+    margin:0;
+
+    font-size:13px;
+
+    line-height:1.7;
+}
+
+.tr-treatment-meta{
+    display:flex;
+
+    justify-content:space-between;
+
+    padding-top:17px;
+    margin-top:18px;
+
+    border-top:1px solid var(--border);
+
+    font-size:12px;
+}
+
+.tr-treatment-meta strong{
+    color:var(--primary-color);
+}
+
+.tr-treatment-content > a{
+    display:inline-block;
+
+    margin-top:18px;
+
+    padding-bottom:4px;
+
+    color:var(--primary-color);
+
+    border-bottom:1px solid var(--secondary-color);
+
+    text-decoration:none;
+
+    font-size:12px;
+
+    font-weight:700;
+}
+
+
+/* =====================================================
+   SIGNATURE
+===================================================== */
+
+.tr-signature{
+    background:var(--surface-2);
+}
+
+.tr-signature-grid{
+    display:grid;
+
+    grid-template-columns:.9fr 1fr;
+
+    gap:75px;
+
+    align-items:center;
+}
+
+.tr-signature-image{
+    position:relative;
+
+    height:620px;
+
+    overflow:hidden;
+
+    border-radius:0 110px 0 0;
+}
+
+.tr-signature-image::after{
+    content:"";
+
+    position:absolute;
+
+    inset:20px;
+
+    border:1px solid rgba(255,255,255,.55);
+
+    pointer-events:none;
+}
+
+.tr-signature-image img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    transition:transform .7s ease;
+}
+
+.tr-signature-image:hover img{
+    transform:scale(1.04);
+}
+
+.tr-image-tag{
+    position:absolute;
+
+    left:30px;
+    bottom:28px;
+
+    padding:11px 16px;
+
+    background:rgba(255,255,255,.92);
+
+    color:var(--primary-color);
+
+    font-size:11px;
+    font-weight:700;
+
+    z-index:2;
+}
+
+.tr-image-tag span{
+    margin-right:10px;
+
+    color:var(--secondary-color);
+}
+
+.tr-signature-content h2{
+    max-width:650px;
+}
+
+.tr-signature-content > p{
+    max-width:600px;
+
+    margin-bottom:27px;
+}
+
+.tr-steps{
+    border-top:1px solid var(--border);
+}
+
+.tr-step{
+    display:grid;
+
+    grid-template-columns:42px 1fr;
+
+    gap:17px;
+
+    padding:18px 0;
+
+    border-bottom:1px solid var(--border);
+}
+
+.tr-step > span{
+    color:var(--secondary-color);
+
+    font-size:12px;
+    font-weight:700;
+}
+
+.tr-step h3{
+    margin:0 0 5px;
+
+    color:var(--primary-color);
+
+    font-family:"Playfair Display",serif;
+
+    font-size:18px;
+}
+
+.tr-step p{
+    margin:0;
+
+    font-size:12px;
+}
+
+
+/* =====================================================
+   BENEFITS
+===================================================== */
+
+.tr-benefits-heading{
+    margin-bottom:40px;
+}
+
+.tr-benefits-heading h2{
+    margin-bottom:0;
+}
+
+.tr-benefits-grid{
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    border-top:1px solid var(--border);
+    border-left:1px solid var(--border);
+}
+
+.tr-benefits-grid article{
+    min-height:180px;
+
+    display:grid;
+
+    grid-template-columns:58px 1fr;
+
+    gap:20px;
+
+    padding:30px;
+
+    border-right:1px solid var(--border);
+    border-bottom:1px solid var(--border);
+
+    transition:background .3s ease;
+}
+
+.tr-benefits-grid article:hover{
+    background:var(--surface-2);
+}
+
+.tr-benefit-icon{
+    width:52px;
+    height:52px;
+
+    display:grid;
+    place-items:center;
+
+    border:1px solid var(--secondary-color);
+
+    border-radius:50%;
+
+    color:var(--secondary-color);
+
+    transition:.3s ease;
+}
+
+.tr-benefits-grid article:hover .tr-benefit-icon{
+    background:var(--secondary-color);
+
+    color:var(--primary-color);
+
+    transform:rotate(-8deg);
+}
+
+.tr-benefit-icon svg{
+    width:19px;
+}
+
+.tr-benefits-grid small{
+    color:var(--secondary-color);
+
+    font-size:10px;
+}
+
+.tr-benefits-grid h3{
+    margin:5px 0;
+
+    color:var(--primary-color);
+
+    font-family:"Playfair Display",serif;
+
+    font-size:23px;
+}
+
+.tr-benefits-grid p{
+    margin:0;
+
+    font-size:12px;
+}
+
+
+/* =====================================================
+   EXPERIENCE
+===================================================== */
+
+.tr-experience{
+    background:var(--surface-2);
+}
+
+.tr-experience-heading{
+    max-width:720px;
+
+    margin-bottom:45px;
+}
+
+.tr-experience-heading h2{
+    margin-bottom:12px;
+}
+
+.tr-experience-heading p{
+    max-width:580px;
+
+    margin:0;
+}
+
+.tr-experience-grid{
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    border-top:1px solid var(--border);
+    border-left:1px solid var(--border);
+}
+
+.tr-experience-grid article{
+    min-height:245px;
+
+    padding:25px;
+
+    border-right:1px solid var(--border);
+    border-bottom:1px solid var(--border);
+
+    transition:
+        transform .3s ease,
+        background .3s ease;
+}
+
+.tr-experience-grid article:hover{
+    background:var(--bg);
+
+    transform:translateY(-4px);
+}
+
+.tr-experience-grid article > span{
+    display:block;
+
+    margin-bottom:30px;
+
+    color:var(--secondary-color);
+
+    font-size:11px;
+    font-weight:700;
+}
+
+.tr-experience-grid article > svg{
+    width:21px;
+
+    margin-bottom:17px;
+
+    color:var(--secondary-color);
+}
+
+.tr-experience-grid h3{
+    margin:0 0 7px;
+
+    color:var(--primary-color);
+
+    font-family:"Playfair Display",serif;
+
+    font-size:24px;
+}
+
+.tr-experience-grid p{
+    margin:0;
+
+    font-size:12px;
+}
+
+
+/* =====================================================
+   CTA
+===================================================== */
+
+.tr-cta{
+    padding:40px 0 70px;
+
+    background:var(--bg);
+}
+
+.tr-cta-box{
+    position:relative;
+
+    min-height:245px;
+
+    padding:42px 52px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:40px;
+
+    overflow:hidden;
+
+    border-radius:20px;
+
+    background:var(--primary-color);
+}
+
+.tr-cta-box::before{
+    content:"";
+
+    position:absolute;
+
+    width:280px;
+    height:280px;
+
+    right:10%;
+    top:-140px;
+
+    border:1px solid rgba(212,175,90,.3);
+
+    border-radius:50%;
+}
+
+.tr-cta-box::after{
+    content:"";
+
+    position:absolute;
+
+    width:180px;
+    height:180px;
+
+    right:20%;
+    bottom:-130px;
+
+    border:1px solid rgba(212,175,90,.2);
+
+    border-radius:50%;
+}
+
+.tr-cta-box > *{
+    position:relative;
+
+    z-index:2;
+}
+
+.tr-cta-box h2{
+    margin:12px 0 8px;
+
+    color:#fff;
+
+    font-family:"Playfair Display",serif;
+
+    font-size:clamp(38px,4vw,55px);
+
+    line-height:1;
+}
+
+.tr-cta-box h2 em{
+    color:var(--secondary-color);
+}
+
+.tr-cta-box p{
+    margin:0;
+
+    color:rgba(255,255,255,.7);
+
+    font-size:13px;
+}
+
+.tr-cta-box .tr-eyebrow{
+    color:var(--secondary-color);
+}
+
+.tr-btn-gold{
+    flex-shrink:0;
+
+    background:var(--secondary-color);
+
+    color:var(--primary-color);
+
+    border:1px solid var(--secondary-color);
+}
+
+.tr-btn-gold:hover{
+    background:#fff;
+
+    border-color:#fff;
+
+    color:var(--primary-color);
+
+    transform:translateY(-3px);
+}
+
+
+/* =====================================================
+   DARK MODE
+===================================================== */
+
+body.dark-mode .tr-treatment-card{
+    background:var(--surface);
+}
+
+body.dark-mode .tr-signature,
+body.dark-mode .tr-experience{
+    background:var(--surface-2);
+}
+
+body.dark-mode .tr-treatment-content h3,
+body.dark-mode .tr-treatment-meta strong,
+body.dark-mode .tr-treatment-content > a,
+body.dark-mode .tr-step h3,
+body.dark-mode .tr-benefits-grid h3,
+body.dark-mode .tr-experience-grid h3{
+    color:var(--dark-text);
+}
+
+
+/* =====================================================
+   RTL
+===================================================== */
+
+html[dir="rtl"] .tr-intro-note{
+    border-left:0;
+
+    border-right:1px solid var(--border);
+
+    padding-left:0;
+
+    padding-right:28px;
+}
+
+html[dir="rtl"] .tr-card-number{
+    left:auto;
+    right:18px;
+}
+
+html[dir="rtl"] .tr-card-icon{
+    right:auto;
+    left:18px;
+}
+
+
+/* =====================================================
+   1024px
+===================================================== */
+
+@media(max-width:1024px){
+
+    .tr-container{
+        width:calc(100% - 64px);
+    }
+
+    .tr-intro-grid{
+        grid-template-columns:50px 1fr;
+    }
+
+    .tr-intro-note{
+        grid-column:2;
+
+        border-left:0;
+
+        border-top:1px solid var(--border);
+
+        padding:18px 0 0;
+    }
+
+    .tr-section-heading{
+        grid-template-columns:1fr 300px;
+    }
+
+    .tr-signature-grid{
+        gap:45px;
+    }
+
+    .tr-signature-image{
+        height:550px;
+    }
+
+    .tr-experience-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+
+/* =====================================================
+   768px
+===================================================== */
+
+@media(max-width:768px){
+
+    .tr-container{
+        width:calc(100% - 40px);
+    }
+
+    .tr-section{
+        padding:65px 0;
+    }
+
+    .tr-hero{
+        min-height:calc(100svh - 70px);
+
+        align-items:flex-end;
+    }
+
+    .tr-hero-content{
+        padding-bottom:95px;
+    }
+
+    .tr-hero h1{
+        font-size:clamp(52px,12vw,78px);
+
+        letter-spacing:-2px;
+    }
+
+    .tr-hero p{
+        font-size:14px;
+    }
+
+    .tr-hero-bottom{
+        display:none;
+    }
+
+    .tr-intro-grid{
+        grid-template-columns:1fr;
+
+        gap:18px;
+    }
+
+    .tr-intro-note{
+        grid-column:auto;
+    }
+
+    .tr-section-heading{
+        grid-template-columns:1fr;
+
+        gap:12px;
+
+        margin-bottom:32px;
+    }
+
+    .tr-treatment-grid{
+        grid-template-columns:1fr;
+    }
+
+    .tr-treatment-large{
+        grid-row:auto;
+    }
+
+    .tr-treatment-large .tr-treatment-image,
+    .tr-treatment-image{
+        height:300px;
+    }
+
+    .tr-signature-grid{
+        grid-template-columns:1fr;
+
+        gap:40px;
+    }
+
+    .tr-signature-image{
+        height:450px;
+    }
+
+    .tr-benefits-grid{
+        grid-template-columns:1fr;
+    }
+
+    .tr-cta-box{
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        padding:36px 28px;
+    }
+
+}
+
+
+/* =====================================================
+   360px
+===================================================== */
+
+@media(max-width:360px){
+
+    .tr-container{
+        width:calc(100% - 28px);
+    }
+
+    .tr-section{
+        padding:52px 0;
+    }
+
+    .tr-hero h1{
+        font-size:48px;
+    }
+
+    .tr-hero-buttons{
+        flex-direction:column;
+    }
+
+    .tr-btn{
+        width:100%;
+    }
+
+    .tr-treatment-content{
+        padding:22px;
+    }
+
+    .tr-signature-image{
+        height:380px;
+
+        border-radius:0 70px 0 0;
+    }
+
+    .tr-experience-grid{
+        grid-template-columns:1fr;
+    }
+
+    .tr-benefits-grid article{
+        padding:24px 20px;
+    }
+
+    .tr-cta-box{
+        padding:30px 22px;
+    }
+
+}
+/* =========================================================
+   AURA SPA - FINAL TREATMENTS PAGE OVERRIDES
+   HTML STRUCTURE UNCHANGED
+========================================================= */
+
+.treatments-page{
+    overflow:hidden;
+}
+
+/* =========================
+   COMMON
+========================= */
+
+.tr-container{
+    width:min(1240px, calc(100% - 110px));
+    margin:0 auto;
+}
+
+.tr-section{
+    padding:90px 0;
+}
+
+.tr-section h2{
+    font-family:"Playfair Display", serif;
+    font-size:clamp(42px, 4.5vw, 64px);
+    line-height:1.08;
+    letter-spacing:-1.8px;
+    font-weight:600;
+}
+
+.tr-section p{
+    font-family:"DM Sans", sans-serif;
+    font-size:14px;
+    line-height:1.8;
+}
+
+/* Same typography everywhere */
+.tr-eyebrow{
+    font-family:"DM Sans", sans-serif;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:3px;
+}
+
+/* =========================================================
+   HERO BUTTONS
+   KEEP HERO DESIGN - ONLY BUTTON STYLE FIX
+========================================================= */
+
+.tr-btn{
+    min-height:48px;
+    padding:0 24px;
+
+    border-radius:var(--btn-radius);
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+
+    font-family:"DM Sans", sans-serif;
+    font-size:13px;
+    font-weight:700;
+
+    text-decoration:none;
+
+    transition:
+        background .3s ease,
+        color .3s ease,
+        border-color .3s ease,
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+/* SAME AS WEBSITE PRIMARY BUTTON */
+
+.tr-btn-primary{
+    background:var(--primary-color);
+    color:#fff;
+    border:1px solid var(--primary-color);
+}
+
+.tr-btn-primary:hover{
+    background:var(--secondary-color);
+    border-color:var(--secondary-color);
+    color:var(--primary-color);
+    transform:translateY(-3px);
+    box-shadow:0 12px 28px rgba(212,175,90,.22);
+}
+
+/* SECONDARY */
+
+.tr-btn-outline{
+    background:transparent;
+    color:#fff;
+    border:1px solid rgba(255,255,255,.75);
+}
+
+.tr-btn-outline:hover{
+    background:var(--secondary-color);
+    border-color:var(--secondary-color);
+    color:var(--primary-color);
+    transform:translateY(-3px);
+}
+
+/* icon movement */
+
+.tr-btn span{
+    transition:transform .3s ease;
+}
+
+.tr-btn:hover span{
+    transform:translate(3px,-3px);
+}
+
+/* =========================================================
+   02 OUR APPROACH
+   TAGLINE
+   HEADING
+   CONTENT
+   ALL CENTER
+========================================================= */
+
+.tr-intro{
+    padding:100px 0;
+    text-align:center;
+}
+
+.tr-intro-grid{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    gap:0;
+}
+
+/* hide number from disturbing alignment */
+
+.tr-number{
+    display:none;
+}
+
+.tr-intro-content{
+    width:100%;
+    max-width:820px;
+    margin:0 auto;
+}
+
+.tr-intro-content .tr-eyebrow{
+    justify-content:center;
+}
+
+.tr-intro-content h2{
+    max-width:780px;
+    margin:16px auto 20px;
+}
+
+.tr-intro-content p{
+    max-width:650px;
+    margin:0 auto;
+}
+
+/* small note also centered */
+
+.tr-intro-note{
+    border:0;
+    padding:20px 0 0;
+    margin:12px auto 0;
+
+    text-align:center;
+}
+
+.tr-intro-note span{
+    margin:0 auto 14px;
+}
+
+.tr-intro-note p{
+    margin:0;
+}
+
+/* =========================================================
+   03 COLLECTION HEADING
+========================================================= */
+
+.tr-section-heading{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+    text-align:center;
+
+    max-width:850px;
+    margin:0 auto 55px;
+
+    gap:0;
+}
+
+.tr-section-heading > div{
+    width:100%;
+}
+
+.tr-section-heading .tr-eyebrow{
+    justify-content:center;
+}
+
+.tr-section-heading h2{
+    margin:16px auto 18px;
+}
+
+.tr-section-heading > p{
+    max-width:650px;
+    margin:0 auto;
+}
+
+/* =========================================================
+   TREATMENT CARDS
+========================================================= */
+
+.tr-treatment-grid{
+    display:grid;
+    grid-template-columns:repeat(2, minmax(0,1fr));
+    gap:26px;
+}
+
+/* remove oversized special card */
+
+.tr-treatment-large{
+    grid-row:auto;
+}
+
+/* same image height */
+
+.tr-treatment-image,
+.tr-treatment-large .tr-treatment-image{
+    height:310px;
+}
+
+.tr-treatment-image{
+    overflow:hidden;
+    position:relative;
+}
+
+.tr-treatment-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+
+    transition:transform .6s ease;
+}
+
+.tr-treatment-card{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:18px;
+    overflow:hidden;
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
+}
+
+.tr-treatment-card:hover{
+    transform:translateY(-7px);
+    border-color:var(--secondary-color);
+    box-shadow:var(--shadow-lg);
+}
+
+.tr-treatment-card:hover .tr-treatment-image img{
+    transform:scale(1.045);
+}
+
+/* card content */
+
+.tr-treatment-content{
+    padding:26px 28px 28px;
+}
+
+.tr-treatment-content h3{
+    font-family:"Playfair Display", serif;
+    font-size:26px;
+    line-height:1.2;
+    margin:9px 0 8px;
+}
+
+.tr-treatment-content p{
+    font-size:13px;
+    line-height:1.7;
+    margin:0;
+}
+
+.tr-treatment-meta{
+    margin-top:18px;
+    padding-top:15px;
+
+    display:flex;
+    justify-content:space-between;
+
+    border-top:1px solid var(--border);
+
+    font-family:"DM Sans", sans-serif;
+    font-size:12px;
+}
+
+.tr-treatment-content > a{
+    display:inline-flex;
+    margin-top:18px;
+
+    font-family:"DM Sans", sans-serif;
+    font-size:12px;
+    font-weight:700;
+
+    color:var(--primary-color);
+
+    text-decoration:none;
+
+    border-bottom:1px solid var(--secondary-color);
+    padding-bottom:4px;
+
+    transition:.3s ease;
+}
+
+.tr-treatment-content > a:hover{
+    color:var(--secondary-color);
+    padding-left:4px;
+}
+
+/* =========================================================
+   04 SIGNATURE RITUAL
+========================================================= */
+
+.tr-signature{
+    background:var(--surface-2);
+}
+
+.tr-signature-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+
+    gap:70px;
+    align-items:center;
+}
+
+/* IMAGE CONTROL */
+
+.tr-signature-image{
+    width:100%;
+    height:560px;
+
+    border-radius:0 90px 0 0;
+    overflow:hidden;
+}
+
+.tr-signature-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+
+    transition:transform .6s ease;
+}
+
+.tr-signature-image:hover img{
+    transform:scale(1.04);
+}
+
+/* TEXT */
+
+.tr-signature-content{
+    max-width:580px;
+}
+
+.tr-signature-content h2{
+    margin:16px 0 20px;
+}
+
+.tr-signature-content > p{
+    max-width:520px;
+    margin-bottom:28px;
+}
+
+/* steps */
+
+.tr-step{
+    grid-template-columns:42px 1fr;
+    gap:18px;
+
+    padding:18px 0;
+}
+
+.tr-step h3{
+    font-family:"Playfair Display", serif;
+    font-size:19px;
+}
+
+.tr-step p{
+    font-size:12px;
+}
+
+/* signature button same common style */
+
+.tr-purple-btn{
+    margin-top:25px;
+
+    background:var(--primary-color);
+    color:#fff;
+
+    border:1px solid var(--primary-color);
+}
+
+.tr-purple-btn:hover{
+    background:var(--secondary-color);
+    border-color:var(--secondary-color);
+    color:var(--primary-color);
+}
+
+/* =========================================================
+   05 BENEFITS
+========================================================= */
+
+.tr-benefits{
+    background:var(--bg);
+}
+
+.tr-benefits-heading{
+    max-width:850px;
+    margin:0 auto 50px;
+
+    text-align:center;
+}
+
+.tr-benefits-heading .tr-eyebrow{
+    justify-content:center;
+}
+
+.tr-benefits-heading h2{
+    margin:16px auto 0;
+}
+
+/* cards */
+
+.tr-benefits-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+
+    max-width:1050px;
+    margin:0 auto;
+}
+
+.tr-benefits-grid article{
+    min-height:190px;
+    padding:32px;
+
+    display:grid;
+    grid-template-columns:58px 1fr;
+    gap:20px;
+
+    border:1px solid var(--border);
+    margin:-1px 0 0 -1px;
+
+    background:var(--surface);
+
+    transition:
+        transform .3s ease,
+        background .3s ease,
+        box-shadow .3s ease;
+}
+
+.tr-benefits-grid article:hover{
+    background:var(--surface-2);
+    transform:translateY(-4px);
+    box-shadow:var(--shadow);
+}
+
+.tr-benefits-grid h3{
+    font-family:"Playfair Display", serif;
+    font-size:23px;
+}
+
+/* =========================================================
+   06 EXPERIENCE
+========================================================= */
+
+.tr-experience{
+    background:var(--surface-2);
+}
+
+.tr-experience-heading{
+    max-width:820px;
+    margin:0 auto 50px;
+
+    text-align:center;
+}
+
+.tr-experience-heading .tr-eyebrow{
+    justify-content:center;
+}
+
+.tr-experience-heading h2{
+    margin:16px auto;
+}
+
+.tr-experience-heading p{
+    max-width:620px;
+    margin:0 auto;
+}
+
+.tr-experience-grid{
+    grid-template-columns:repeat(4,1fr);
+
+    max-width:1100px;
+    margin:0 auto;
+}
+
+.tr-experience-grid article{
+    min-height:220px;
+    padding:28px;
+
+    transition:
+        transform .3s ease,
+        background .3s ease;
+}
+
+.tr-experience-grid article:hover{
+    transform:translateY(-5px);
+    background:var(--bg);
+}
+
+.tr-experience-grid h3{
+    font-family:"Playfair Display", serif;
+    font-size:22px;
+}
+
+/* =========================================================
+   07 CTA
+========================================================= */
+
+.tr-cta{
+    padding:70px 0 90px;
+}
+
+.tr-cta-box{
+    min-height:270px;
+
+    padding:55px 65px;
+
+    border-radius:20px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:50px;
+}
+
+.tr-cta-box h2{
+    font-family:"Playfair Display", serif;
+    font-size:clamp(40px,4vw,56px);
+    line-height:1.05;
+}
+
+.tr-cta-box p{
+    font-size:13px;
+}
+
+/* CTA BUTTON */
+
+.tr-btn-gold{
+    min-height:48px;
+    padding:0 25px;
+
+    border-radius:var(--btn-radius);
+
+    background:var(--secondary-color);
+    border:1px solid var(--secondary-color);
+
+    color:var(--primary-color);
+
+    font-family:"DM Sans", sans-serif;
+    font-size:13px;
+    font-weight:700;
+
+    transition:.3s ease;
+}
+
+.tr-btn-gold:hover{
+    background:#fff;
+    border-color:#fff;
+    color:var(--primary-color);
+
+    transform:translateY(-3px);
+}
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+body.dark-mode .tr-treatment-card,
+body.dark-mode .tr-benefits-grid article{
+    background:var(--surface);
+}
+
+body.dark-mode .tr-treatment-card:hover,
+body.dark-mode .tr-benefits-grid article:hover{
+    background:var(--surface-2);
+}
+
+/* =========================================================
+   1024px
+========================================================= */
+
+@media(max-width:1024px){
+
+    .tr-container{
+        width:calc(100% - 64px);
+    }
+
+    .tr-treatment-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .tr-signature-grid{
+        gap:45px;
+    }
+
+    .tr-signature-image{
+        height:500px;
+    }
+
+    .tr-experience-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+/* =========================================================
+   768px
+========================================================= */
+
+@media(max-width:768px){
+
+    .tr-container{
+        width:calc(100% - 40px);
+    }
+
+    .tr-section{
+        padding:70px 0;
+    }
+
+    .tr-intro{
+        padding:75px 0;
+    }
+
+    .tr-treatment-grid{
+        grid-template-columns:1fr;
+    }
+
+    .tr-treatment-image,
+    .tr-treatment-large .tr-treatment-image{
+        height:300px;
+    }
+
+    .tr-signature-grid{
+        grid-template-columns:1fr;
+        gap:40px;
+    }
+
+    .tr-signature-image{
+        height:430px;
+        border-radius:0 70px 0 0;
+    }
+
+    .tr-signature-content{
+        max-width:100%;
+    }
+
+    .tr-benefits-grid{
+        grid-template-columns:1fr;
+    }
+
+    .tr-experience-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .tr-cta-box{
+        padding:42px 30px;
+        flex-direction:column;
+        align-items:flex-start;
+    }
+}
+
+/* =========================================================
+   360px
+========================================================= */
+
+@media(max-width:360px){
+
+    .tr-container{
+        width:calc(100% - 28px);
+    }
+
+    .tr-section{
+        padding:55px 0;
+    }
+
+    .tr-section h2{
+        font-size:40px;
+    }
+
+    .tr-treatment-image,
+    .tr-treatment-large .tr-treatment-image{
+        height:260px;
+    }
+
+    .tr-treatment-content{
+        padding:22px;
+    }
+
+    .tr-signature-image{
+        height:360px;
+    }
+
+    .tr-experience-grid{
+        grid-template-columns:1fr;
+    }
+
+    .tr-cta-box{
+        padding:32px 22px;
+    }
+
+    .tr-btn,
+    .tr-btn-gold{
+        width:100%;
+    }
+}
+
+
+/* =====================================================
+   TARGETED FIXES — 13 OCT 2026
+   Existing layout and root variables preserved.
+===================================================== */
+
+/* Our Approach: refreshed editorial panel, without changing the page structure */
+.tr-intro { padding-top: 82px; padding-bottom: 82px; }
+.tr-intro .tr-intro-grid {
+    display: grid;
+    grid-template-columns: 72px minmax(0, 1fr) minmax(190px, .48fr);
+    align-items: center;
+    gap: clamp(24px, 4vw, 58px);
+    padding: clamp(28px, 4vw, 52px);
+    border: 1px solid var(--border, rgba(56,15,82,.14));
+    border-radius: 20px;
+    background: var(--surface, #fffaf5);
+}
+.tr-intro .tr-number {
+    align-self: start; color: var(--secondary-color, #D4AF5A);
+    font-family: "Playfair Display", serif; font-size: 24px;
+}
+.tr-intro .tr-intro-content { max-width: 690px; }
+.tr-intro .tr-intro-content h2 { margin-top: 12px; }
+.tr-intro .tr-intro-content > p { max-width: 650px; font-size: 16px; line-height: 1.85; }
+.tr-intro .tr-intro-note {
+    padding: 24px; border-left: 1px solid var(--border, rgba(56,15,82,.14));
+    background: rgba(212,175,90,.08); border-radius: 0 12px 12px 0;
+}
+.tr-intro .tr-intro-note p { font-size: 15px; line-height: 2; }
+
+/* Collection cards: improve reading size */
+.tr-collection .tr-treatment-content h3 { font-size: clamp(20px, 1.7vw, 24px); }
+.tr-collection .tr-treatment-content > p,
+.tr-collection .tr-treatment-content p { font-size: 15px; line-height: 1.8; }
+.tr-collection .tr-treatment-meta { font-size: 14px; }
+
+/* Preserve one consistent treatment-button appearance, including hover */
+.tr-treatment-page .tr-btn, .treatments-page .tr-btn,
+.tr-hero-buttons .tr-btn, .tr-signature-content .tr-btn,
+.tr-cta-box .tr-btn-gold {
+    border-radius: var(--btn-radius, 10px);
+    transition: background-color .22s ease, color .22s ease, border-color .22s ease, transform .22s ease;
+}
+.tr-signature-content .tr-btn,
+.tr-signature-content a.tr-purple-btn { min-height: 48px; border-radius: var(--btn-radius, 10px); }
+.tr-cta-box .tr-btn-gold { background: var(--secondary-color, #D4AF5A); color: var(--primary-color, #380f52); border: 1px solid var(--secondary-color, #D4AF5A); }
+.tr-cta-box .tr-btn-gold:hover,
+.tr-cta-box .tr-btn-gold:focus-visible { background: var(--primary-color, #380f52); color: #fff; border-color: var(--secondary-color, #D4AF5A); transform: translateY(-2px); }
+.tr-cta-box .tr-btn-gold:hover span { color: #fff; }
+
+/* RTL: keep the hero note aligned to the RTL reading edge */
+html[dir="rtl"] .tr-hero-bottom { left: auto; right: 5%; text-align: right; }
+html[dir="rtl"] .tr-intro .tr-intro-note { border-left: 0; border-right: 1px solid var(--border, rgba(56,15,82,.14)); border-radius: 12px 0 0 12px; }
+
+body.dark-mode .tr-intro .tr-intro-grid { background: var(--dark-surface, #211b25); border-color: var(--dark-border, #403447); }
+body.dark-mode .tr-intro .tr-intro-note { background: rgba(212,175,90,.08); border-color: var(--dark-border, #403447); }
+body.dark-mode .tr-cta-box .tr-btn-gold { color: var(--primary-color, #380f52); }
+body.dark-mode .tr-cta-box .tr-btn-gold:hover,
+body.dark-mode .tr-cta-box .tr-btn-gold:focus-visible { background: var(--primary-color, #380f52); color: #fff; }
+
+@media (max-width: 768px) {
+    .tr-intro { padding-top: 55px; padding-bottom: 55px; }
+    .tr-intro .tr-intro-grid { grid-template-columns: 1fr; gap: 18px; padding: 25px; }
+    .tr-intro .tr-intro-note { border-left: 0; border-right: 0; border-top: 1px solid var(--border, rgba(56,15,82,.14)); border-radius: 0; padding: 18px 0 0; }
+    html[dir="rtl"] .tr-intro .tr-intro-note { border-right: 0; }
+}
+
+
+/* ==========================================
+   TREATMENTS PAGE — OUR APPROACH REDESIGN
+========================================== */
+
+.tr-intro .tr-intro-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(220px, 0.38fr);
+    align-items: center;
+    gap: clamp(28px, 5vw, 70px);
+
+    width: 100%;
+    padding: clamp(28px, 5vw, 64px);
+    box-sizing: border-box;
+}
+
+.tr-intro .tr-number {
+    display: none;
+}
+
+.tr-intro .tr-intro-content {
+    width: 100%;
+    max-width: 760px;
+    min-width: 0;
+}
+
+.tr-intro .tr-intro-content .tr-eyebrow {
+    justify-content: flex-start;
+}
+
+.tr-intro .tr-intro-content h2 {
+    max-width: 720px;
+    width: 100%;
+    margin: 16px 0 22px;
+    font-size: clamp(38px, 4.5vw, 64px);
+    line-height: 1.12;
+    overflow-wrap: normal;
+    word-break: normal;
+}
+
+.tr-intro .tr-intro-content > p {
+    width: 100%;
+    max-width: 650px;
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.85;
+}
+
+.tr-intro .tr-intro-note {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 26px;
+    border-left: 1px solid var(--border);
+    border-radius: 0 14px 14px 0;
+    background: var(--surface-2);
+    text-align: center;
+}
+
+.tr-intro .tr-intro-note p {
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+
+/* ==========================================
+   COLLECTION — ALIGN CARD DIVIDER LINES
+========================================== */
+
+.tr-treatment-grid {
+    align-items: stretch;
+}
+
+.tr-treatment-grid .tr-treatment-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.tr-treatment-grid .tr-treatment-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 26px 28px 28px;
+}
+
+.tr-treatment-grid .tr-treatment-content h3 {
+    line-height: 1.3;
+    min-height: 1.3em;
+}
+
+.tr-treatment-grid .tr-treatment-content > p {
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+/* Keep the price divider at the same vertical position */
+.tr-treatment-grid .tr-treatment-meta {
+    margin-top: auto;
+    padding-top: 18px;
+    min-height: 48px;
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+/* Keep Discover ritual links aligned */
+.tr-treatment-grid .tr-treatment-content > a {
+    align-self: flex-start;
+    margin-top: 18px;
+}
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 768px) {
+    .tr-intro .tr-intro-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 24px;
+        padding: 28px 22px;
+    }
+
+    .tr-intro .tr-intro-content h2 {
+        font-size: clamp(36px, 8vw, 48px);
+    }
+
+    .tr-intro .tr-intro-note {
+        border-left: 0;
+        border-top: 1px solid var(--border);
+        border-radius: 0;
+        padding: 20px 0 0;
+    }
+
+    .tr-treatment-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .tr-treatment-grid .tr-treatment-content h3 {
+        min-height: 0;
+    }
+}
+
+/* TREATMENTS HERO - CENTER ALIGN */
+.tr-hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: 35px;
+    padding-bottom: 55px;
+}
+
+.tr-hero-content .tr-eyebrow {
+    justify-content: center;
+}
+
+.tr-hero h1 {
+    max-width: 900px;
+    width: 100%;
+    margin: 20px auto;
+    font-size: clamp(48px, 6vw, 82px);
+    line-height: 1.05;
+    letter-spacing: -2px;
+}
+
+.tr-hero p {
+    max-width: 650px;
+    width: 100%;
+    margin: 0 auto 28px;
+    text-align: center;
+}
+
+.tr-hero-buttons {
+    justify-content: center;
+}
+
+.tr-hero-overlay {
+    background: linear-gradient(
+        180deg,
+        rgba(32, 7, 43, .70),
+        rgba(56, 15, 82, .72)
+    );
+}
+
+@media (max-width: 768px) {
+    .tr-hero-content {
+        padding: 40px 0 75px;
+    }
+
+    .tr-hero h1 {
+        font-size: clamp(38px, 8vw, 58px);
+        letter-spacing: -1px;
+    }
+
+    .tr-hero-bottom {
+        right: 20px;
+        bottom: 15px;
+        width: auto;
+        padding: 10px 14px;
+    }
+}
+
+/* REDESIGNED TREATMENTS CTA */
+.tr-cta {
+    padding: 20px 0 24px;
+    background: var(--bg);
+}
+
+.tr-cta-box {
+    min-height: 0;
+    padding: 48px 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    text-align: center;
+    border-radius: 0;
+    border-top: 1px solid var(--secondary-color);
+    border-bottom: 1px solid var(--secondary-color);
+    background: transparent;
+}
+
+.tr-cta-box::before,
+.tr-cta-box::after {
+    display: none;
+}
+
+.tr-cta-box > div {
+    max-width: 760px;
+}
+
+.tr-cta-box h2 {
+    margin: 12px 0;
+    font-size: clamp(34px, 4vw, 52px);
+    line-height: 1.15;
+    color: var(--primary-color);
+}
+
+.tr-cta-box h2 em {
+    color: var(--secondary-color);
+}
+
+.tr-cta-box p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.tr-cta-box .tr-btn-gold {
+    min-height: 46px;
+    padding: 0 24px;
+    background: var(--primary-color);
+    color: #fff;
+    border: 1px solid var(--primary-color);
+}
+
+.tr-cta-box .tr-btn-gold:hover {
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    border-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+/* Reduce space before footer */
+.tr-cta + .site-footer {
+    margin-top: 0;
+}
+
+@media (max-width: 768px) {
+    .tr-cta {
+        padding: 12px 0 16px;
+    }
+
+    .tr-cta-box {
+        padding: 35px 20px;
+        gap: 16px;
+    }
+}
+
+/* Fix Treatments CTA button text in dark mode */
+body.dark-mode .tr-cta-box .tr-btn-gold,
+body.dark-mode .tr-cta-box .tr-btn-gold:link,
+body.dark-mode .tr-cta-box .tr-btn-gold:visited {
+    background: var(--secondary-color);
+    color: #380F52 !important;
+    border: 1px solid var(--secondary-color);
+    opacity: 1;
+    visibility: visible;
+    -webkit-text-fill-color: #380F52;
+}
+
+body.dark-mode .tr-cta-box .tr-btn-gold:hover {
+    background: transparent;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff;
+    border-color: var(--secondary-color);
+}

@@ -1,0 +1,263 @@
+
+.error-page {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "DM Sans", sans-serif;
+    background: var(--bg, #FBF8F3);
+    color: var(--text, #2C2430);
+}
+
+.error-layout {
+    min-height: 100vh;
+    position: relative;
+    display: grid;
+    place-items: center;
+    padding: 55px 24px;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.error-logo {
+    position: absolute;
+    top: 30px;
+    left: 5%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: var(--primary-color, #380F52);
+    font: 700 25px "Playfair Display", serif;
+}
+
+.error-logo img {
+    width: 54px;
+    height: 54px;
+    object-fit: contain;
+}
+
+.error-logo span span {
+    color: var(--secondary-color, #D4AF5A);
+}
+
+.error-content {
+    width: min(100%, 680px);
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.error-code {
+    display: block;
+    font: 700 clamp(100px, 17vw, 190px)/.9 "Playfair Display", serif;
+    letter-spacing: -8px;
+    color: var(--primary-color, #380F52);
+    opacity: .09;
+    margin-bottom: -12px;
+}
+
+.error-content .eyebrow {
+    color: var(--secondary-color, #D4AF5A);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin: 0 0 18px;
+}
+
+.error-content h1 {
+    font: 600 clamp(36px, 5vw, 58px)/1.15 "Playfair Display", serif;
+    color: var(--primary-color, #380F52);
+    margin: 0 0 20px;
+}
+
+.error-content h1 em {
+    color: var(--secondary-color, #D4AF5A);
+}
+
+.error-description {
+    max-width: 470px;
+    margin: 0 auto 30px;
+    color: var(--muted, #746B78);
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.error-actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.error-actions .btn {
+    min-height: 48px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.error-actions .btn svg {
+    width: 17px;
+    height: 17px;
+}
+
+.error-note {
+    display: block;
+    margin-top: 32px;
+    color: var(--muted, #746B78);
+    font: italic 14px "Playfair Display", serif;
+}
+
+.error-bottom {
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    right: 24px;
+    text-align: center;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--muted, #746B78);
+}
+
+.error-bottom span {
+    color: var(--secondary-color, #D4AF5A);
+}
+
+.error-decoration {
+    position: absolute;
+    z-index: -1;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.error-decoration-one {
+    width: 390px;
+    height: 390px;
+    top: -210px;
+    right: -100px;
+    background: rgba(212, 175, 90, .12);
+}
+
+.error-decoration-two {
+    width: 340px;
+    height: 340px;
+    bottom: -220px;
+    left: -100px;
+    border: 1px solid rgba(56, 15, 82, .16);
+}
+
+@media (max-width: 480px) {
+    .error-logo {
+        top: 20px;
+        left: 20px;
+        font-size: 22px;
+    }
+
+    .error-content h1 br {
+        display: none;
+    }
+
+    .error-actions {
+        flex-direction: column;
+    }
+
+    .error-actions .btn {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+.maintenance-icon {
+    width: 66px;
+    height: 66px;
+    display: grid;
+    place-items: center;
+    margin: 0 auto 24px;
+    color: var(--secondary-color, #D4AF5A);
+    border: 1px solid rgba(212, 175, 90, .55);
+    border-radius: 50%;
+    background: rgba(212, 175, 90, .08);
+}
+
+.maintenance-icon svg {
+    width: 29px;
+    height: 29px;
+    stroke-width: 1.5;
+}
+
+.maintenance-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 48px;
+    text-decoration: none;
+}
+
+.maintenance-button svg {
+    width: 17px;
+    height: 17px;
+}
+
+/* Theme and RTL controls for pages without a header */
+.utility-controls {
+  position: fixed;
+  top: 24px;
+  right: 28px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 9999;
+  direction: ltr;
+}
+
+.utility-controls .icon-btn {
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--primary-color);
+  cursor: pointer;
+  transition: background .35s ease,
+              color .35s ease,
+              transform .35s ease;
+}
+
+.utility-controls .icon-btn:hover {
+  background: var(--secondary-color);
+  color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+.utility-controls .icon-btn svg {
+  width: 19px;
+  height: 19px;
+}
+
+html[dir="rtl"] .utility-controls {
+  right: auto;
+  left: 28px;
+}
+
+@media (max-width: 768px) {
+  .utility-controls {
+    top: 14px;
+    right: 14px;
+    gap: 8px;
+  }
+
+  html[dir="rtl"] .utility-controls {
+    right: auto;
+    left: 14px;
+  }
+
+  .utility-controls .icon-btn {
+    width: 40px;
+    height: 40px;
+  }
+}

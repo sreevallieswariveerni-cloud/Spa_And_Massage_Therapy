@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Create Account | AuraSpa</title>
+    <link rel="icon" type="image/png" sizes="184x184" href="images/Logo_Image_Spa.png">
+
+
+    <!-- Fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap"
+        rel="stylesheet">
+
+
+    <!-- Lucide -->
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+
+    <!-- AOS -->
+
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+
+
+    <!-- Main CSS -->
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/signup.css">
+
+</head>
+
+
+<body>
+
+
+<main class="signup-auth-page">
+
+
+    <!-- =========================
+         TOP RIGHT ICONS
+    ========================== -->
+
+    <div class="signup-top-actions">
+
+        <button
+            type="button"
+            class="signup-icon-btn"
+            id="themeToggle"
+            title="Toggle theme">
+
+            <i data-lucide="moon"></i>
+
+        </button>
+
+
+        <button
+            type="button"
+            class="signup-icon-btn"
+            id="rtlToggle"
+            title="Toggle RTL">
+
+            <i data-lucide="arrow-left-right"></i>
+
+        </button>
+
+    </div>
+
+
+
+    <!-- =========================
+         SIGNUP CARD
+    ========================== -->
+
+    <section
+        class="signup-auth-card"
+        data-aos="fade-up">
+
+
+        <!-- LOGO -->
+
+        <div class="signup-auth-logo">
+
+            <a href="index.html" class="brand">
+    <img src="images/Logo_Image_Spa.png" alt="Aura Spa Logo">
+    <span class="brand-title">
+    <span class="brand-name">
+        <span class="brand-aura">Aura</span><span class="brand-spa">Spa</span>
+    </span>
+    <small class="brand-tagline">A Natural Escape for a Better You</small>
+</span>
+</a>
+
+        </div>
+
+
+
+        <!-- HEADING -->
+
+        <div class="signup-auth-heading">
+
+            <h1>
+                Create <span>Account</span>
+            </h1>
+
+            <p>
+                Begin your personalized wellness journey.
+            </p>
+
+        </div>
+
+
+
+        <!-- FORM -->
+
+        <form id="signupForm">
+
+
+            <div class="signup-grid">
+
+
+                <!-- FULL NAME -->
+
+                <div class="signup-field">
+
+                    <label for="fullName">
+                        Full Name
+                    </label>
+
+                    <div class="signup-input-wrap">
+
+                        <i data-lucide="user-round"></i>
+
+                        <input
+                            type="text"
+                            id="fullName"
+                            class="signup-input"
+                            placeholder="Enter your full name"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- EMAIL -->
+
+                <div class="signup-field">
+
+                    <label for="signupEmail">
+                        Email Address
+                    </label>
+
+                    <div class="signup-input-wrap">
+
+                        <i data-lucide="mail"></i>
+
+                        <input
+                            type="email"
+                            id="signupEmail"
+                            class="signup-input"
+                            placeholder="Enter your email address"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PHONE -->
+
+                <div class="signup-field">
+
+                    <label for="phone">
+                        Phone Number
+                    </label>
+
+                    <div class="signup-input-wrap">
+
+                        <i data-lucide="phone"></i>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            class="signup-input"
+                            placeholder="Enter your phone number"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- CITY -->
+
+                <div class="signup-field">
+
+                    <label for="city">
+                        City
+                    </label>
+
+                    <div class="signup-input-wrap">
+
+                        <i data-lucide="map-pin"></i>
+
+                        <input
+                            type="text"
+                            id="city"
+                            class="signup-input"
+                            placeholder="Enter your city"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PASSWORD -->
+
+                <div class="signup-field">
+
+                    <label for="signupPassword">
+                        Create Password
+                    </label>
+
+                    <div class="signup-input-wrap">
+
+                        <i data-lucide="lock-keyhole"></i>
+
+                        <input
+                            type="password"
+                            id="signupPassword"
+                            class="signup-input"
+                            placeholder="Create a password"
+                            required>
+
+                        <button
+                            type="button"
+                            class="signup-password-toggle"
+                            data-password="signupPassword">
+
+                            <i data-lucide="eye"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- CONFIRM PASSWORD -->
+
+                <div class="signup-field">
+
+                    <label for="confirmPassword">
+                        Confirm Password
+                    </label>
+
+                    <div class="signup-input-wrap">
+
+                        <i data-lucide="shield-check"></i>
+
+                        <input
+                            type="password"
+                            id="confirmPassword"
+                            class="signup-input"
+                            placeholder="Confirm your password"
+                            required>
+
+                        <button
+                            type="button"
+                            class="signup-password-toggle"
+                            data-password="confirmPassword">
+
+                            <i data-lucide="eye"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- TERMS -->
+
+                <label class="signup-terms">
+
+                    <input
+                        type="checkbox"
+                        required>
+
+                    <span>
+                        I agree to the
+                        <a href="#">Terms & Conditions</a>
+                        and
+                        <a href="#">Privacy Policy</a>.
+                    </span>
+
+                </label>
+
+
+            </div>
+
+
+
+            <!-- SUBMIT -->
+
+            <button
+                type="submit"
+                class="btn btn-primary signup-submit">
+
+                Create Account
+
+                <i data-lucide="user-plus"></i>
+
+            </button>
+
+
+
+            <!-- DIVIDER -->
+
+            <div class="signup-divider">
+
+                <span>or continue with</span>
+
+            </div>
+
+
+
+            <!-- SOCIAL -->
+
+            <div class="signup-social">
+
+                <button
+                    type="button"
+                    class="signup-social-btn">
+
+                    <i data-lucide="apple"></i>
+
+                    Apple
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="signup-social-btn">
+
+                    <i data-lucide="chrome"></i>
+
+                    Google
+
+                </button>
+
+            </div>
+
+
+
+            <!-- LOGIN -->
+
+            <div class="signup-login-text">
+
+                Already have an account?
+
+                <a href="login.html">
+                    Login
+                </a>
+
+            </div>
+
+
+        </form>
+
+    </section>
+
+</main>
+
+
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+
+<script>
+
+    AOS.init({
+        duration: 700,
+        once: true
+    });
+
+
+    lucide.createIcons();
+
+
+
+    /* =========================
+       PASSWORD TOGGLE
+    ========================== */
+
+    document
+        .querySelectorAll(".signup-password-toggle")
+        .forEach(button => {
+
+            button.addEventListener("click", () => {
+
+                const input =
+                    document.getElementById(
+                        button.dataset.password
+                    );
+
+                if (!input) return;
+
+
+                if (input.type === "password") {
+
+                    input.type = "text";
+
+                    button.innerHTML =
+                        '<i data-lucide="eye-off"></i>';
+
+                } else {
+
+                    input.type = "password";
+
+                    button.innerHTML =
+                        '<i data-lucide="eye"></i>';
+                }
+
+
+                lucide.createIcons();
+
+            });
+
+        });
+
+
+
+    /* =========================
+       THEME
+    ========================== */
+
+    const themeToggle =
+        document.getElementById("themeToggle");
+
+
+    themeToggle?.addEventListener(
+        "click",
+        () => {
+
+            document.body.classList.toggle(
+                "dark-mode"
+            );
+
+
+            const isDark =
+                document.body.classList.contains(
+                    "dark-mode"
+                );
+
+
+            localStorage.setItem(
+                "aura-theme",
+                isDark ? "dark" : "light"
+            );
+
+
+            themeToggle.innerHTML =
+                isDark
+                    ? '<i data-lucide="sun"></i>'
+                    : '<i data-lucide="moon"></i>';
+
+
+            lucide.createIcons();
+
+        }
+    );
+
+
+
+    /* =========================
+       LOAD THEME
+    ========================== */
+
+    if (
+        localStorage.getItem("aura-theme")
+        === "dark"
+    ) {
+
+        document.body.classList.add(
+            "dark-mode"
+        );
+
+        themeToggle.innerHTML =
+            '<i data-lucide="sun"></i>';
+
+        lucide.createIcons();
+    }
+
+
+
+    /* =========================
+       RTL
+    ========================== */
+
+    document
+        .getElementById("rtlToggle")
+        ?.addEventListener(
+            "click",
+            () => {
+
+                const html =
+                    document.documentElement;
+
+                html.dir =
+                    html.dir === "rtl"
+                        ? "ltr"
+                        : "rtl";
+
+
+                localStorage.setItem(
+                    "aura-direction",
+                    html.dir
+                );
+
+            }
+        );
+
+
+    if (
+        localStorage.getItem(
+            "aura-direction"
+        )
+    ) {
+
+        document.documentElement.dir =
+            localStorage.getItem(
+                "aura-direction"
+            );
+
+    }
+
+
+
+    /* =========================
+       SIGNUP
+    ========================== */
+
+    document
+        .getElementById("signupForm")
+        ?.addEventListener(
+            "submit",
+            function(e) {
+
+                e.preventDefault();
+
+                const password =
+                    document.getElementById(
+                        "signupPassword"
+                    ).value;
+
+                const confirmPassword =
+                    document.getElementById(
+                        "confirmPassword"
+                    ).value;
+
+
+                if (
+                    password !==
+                    confirmPassword
+                ) {
+
+                    alert(
+                        "Passwords do not match."
+                    );
+
+                    return;
+                }
+
+
+                // Connect backend here
+
+                console.log(
+                    "Signup submitted"
+                );
+
+            }
+        );
+
+</script>
+
+
+</body>
+
+</html>

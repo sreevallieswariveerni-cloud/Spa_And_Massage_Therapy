@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | AuraSpa</title>
+    <link rel="icon" type="image/png" sizes="184x184" href="images/Logo_Image_Spa.png">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+
+    <!-- Lucide -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+
+    <main class="auth-page">
+
+        <!-- TOP RIGHT ACTIONS -->
+        <div class="auth-top-actions">
+
+            <button
+                type="button"
+                class="auth-icon-btn"
+                id="themeToggle"
+                aria-label="Toggle theme"
+                title="Toggle theme">
+                <i data-lucide="moon"></i>
+            </button>
+
+            <button
+                type="button"
+                class="auth-icon-btn"
+                id="rtlToggle"
+                aria-label="Toggle RTL"
+                title="Toggle RTL">
+                <i data-lucide="arrow-left-right"></i>
+            </button>
+
+        </div>
+
+
+        <!-- LOGIN CARD -->
+        <section class="auth-card" data-aos="fade-up">
+
+            <!-- LOGO -->
+            <div class="auth-logo">
+                <a href="index.html" class="brand">
+    <img src="images/Logo_Image_Spa.png" alt="Aura Spa Logo">
+   <span class="brand-title">
+    <span class="brand-name">
+        <span class="brand-aura">Aura</span><span class="brand-spa">Spa</span>
+    </span>
+    <small class="brand-tagline">A Natural Escape for a Better You</small>
+</span>
+</a>
+            </div>
+
+
+            <!-- HEADING -->
+            <div class="auth-heading">
+                <h1>
+                    Welcome <span>Back</span>
+                </h1>
+
+                <p>
+                    Sign in to continue your wellness journey.
+                </p>
+            </div>
+
+
+            <!-- FORM -->
+            <form class="auth-form" id="loginForm">
+
+                <!-- EMAIL -->
+                <div class="auth-field">
+
+                    <label for="loginEmail">
+                        Email Address
+                    </label>
+
+                    <div class="auth-input-wrap">
+
+                        <i data-lucide="mail"></i>
+
+                        <input
+                            type="email"
+                            id="loginEmail"
+                            class="auth-input"
+                            placeholder="Enter your email address"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- PASSWORD -->
+                <div class="auth-field">
+
+                    <label for="loginPassword">
+                        Password
+                    </label>
+
+                    <div class="auth-input-wrap">
+
+                        <i data-lucide="lock-keyhole"></i>
+
+                        <input
+                            type="password"
+                            id="loginPassword"
+                            class="auth-input"
+                            placeholder="Enter your password"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            class="password-toggle"
+                            data-password="loginPassword"
+                            aria-label="Show password">
+
+                            <i data-lucide="eye"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- OPTIONS -->
+                <div class="auth-options">
+
+                    <label class="remember">
+
+                        <input type="checkbox">
+
+                        <span>Remember me</span>
+
+                    </label>
+
+                    <a href="#" class="forgot-link">
+                        Forgot password?
+                    </a>
+
+                </div>
+
+
+                <!-- LOGIN -->
+                <button
+                    type="submit"
+                    class="btn btn-primary auth-submit">
+
+                    Login
+
+                    <i data-lucide="arrow-right"></i>
+
+                </button>
+
+
+                <!-- DIVIDER -->
+                <div class="auth-divider">
+                    <span>or continue with</span>
+                </div>
+
+
+                <!-- SOCIAL -->
+                <div class="social-login">
+
+                    <button type="button" class="social-btn">
+                        <i data-lucide="apple"></i>
+                        Apple
+                    </button>
+
+                    <button type="button" class="social-btn">
+                        <i data-lucide="chrome"></i>
+                        Google
+                    </button>
+
+                </div>
+
+
+                <!-- SIGN UP -->
+                <div class="auth-bottom">
+
+                    New to AuraSpa?
+
+                    <a href="signup.html">
+                        Create account
+                    </a>
+
+                </div>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <script>
+        AOS.init({
+            duration: 700,
+            once: true
+        });
+
+        lucide.createIcons();
+
+        /* =========================
+           PASSWORD TOGGLE
+        ========================= */
+
+        document.querySelectorAll(".password-toggle").forEach(button => {
+
+            button.addEventListener("click", () => {
+
+                const inputId = button.dataset.password;
+                const input = document.getElementById(inputId);
+
+                if (!input) return;
+
+                if (input.type === "password") {
+                    input.type = "text";
+                    button.innerHTML = '<i data-lucide="eye-off"></i>';
+                } else {
+                    input.type = "password";
+                    button.innerHTML = '<i data-lucide="eye"></i>';
+                }
+
+                lucide.createIcons();
+
+            });
+
+        });
+
+
+        /* =========================
+           THEME
+        ========================= */
+
+        const themeToggle = document.getElementById("themeToggle");
+
+        themeToggle?.addEventListener("click", () => {
+
+            document.body.classList.toggle("dark-mode");
+
+            const isDark =
+                document.body.classList.contains("dark-mode");
+
+            localStorage.setItem(
+                "aura-theme",
+                isDark ? "dark" : "light"
+            );
+
+            themeToggle.innerHTML =
+                isDark
+                    ? '<i data-lucide="sun"></i>'
+                    : '<i data-lucide="moon"></i>';
+
+            lucide.createIcons();
+
+        });
+
+
+        /* =========================
+           LOAD THEME
+        ========================= */
+
+        if (localStorage.getItem("aura-theme") === "dark") {
+
+            document.body.classList.add("dark-mode");
+
+            themeToggle.innerHTML =
+                '<i data-lucide="sun"></i>';
+
+            lucide.createIcons();
+        }
+
+
+        /* =========================
+           RTL
+        ========================= */
+
+        document
+            .getElementById("rtlToggle")
+            ?.addEventListener("click", () => {
+
+                const html = document.documentElement;
+
+                html.dir =
+                    html.dir === "rtl"
+                        ? "ltr"
+                        : "rtl";
+
+                localStorage.setItem(
+                    "aura-direction",
+                    html.dir
+                );
+
+            });
+
+
+        if (localStorage.getItem("aura-direction")) {
+            document.documentElement.dir =
+                localStorage.getItem("aura-direction");
+        }
+
+
+        /* =========================
+           LOGIN DEMO
+        ========================= */
+
+        document
+            .getElementById("loginForm")
+            ?.addEventListener("submit", function(e) {
+
+                e.preventDefault();
+
+                // Connect your backend here
+                console.log("Login submitted");
+
+            });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,311 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AuraSpa | Client Dashboard</title>
+    <link rel="icon" type="image/png" sizes="184x184" href="images/Logo_Image_Spa.png">
+    <!-- Existing global styles first -->
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/dashboard.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+  
+</head>
+
+<body>
+<main class="dashboard-page">
+
+    <input type="checkbox" id="dashboard-sidebar-toggle" class="dashboard-sidebar-toggle">
+
+    <!-- STICKY HEADER -->
+    <header class="dashboard-topbar">
+        <label for="dashboard-sidebar-toggle" class="dashboard-menu-button" aria-label="Open menu">
+            <i data-lucide="menu"></i>
+        </label>
+
+        <div class="dashboard-topbar-title">Client Dashboard</div>
+
+        <div class="dashboard-topbar-actions">
+            <button type="button" class="dashboard-topbar-button" id="themeToggle" aria-label="Toggle theme">
+                <i data-lucide="moon"></i>
+            </button>
+
+            <button type="button" class="dashboard-topbar-button" id="rtlToggle" aria-label="Toggle text direction">
+                <i data-lucide="arrow-left-right"></i>
+            </button>
+
+            <button type="button" class="dashboard-topbar-button" aria-label="Notifications"
+                data-page-link="section-notifications">
+                <i data-lucide="bell"></i>
+                <span class="notification-dot"></span>
+            </button>
+
+            <div class="topbar-user">
+                <div class="user-avatar">S</div>
+                <div class="topbar-user-info">
+                    <strong>Sarah Johnson</strong>
+                    <span>Premium Member</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <label for="dashboard-sidebar-toggle" class="dashboard-sidebar-overlay"></label>
+
+    <!-- SIDEBAR: NO SCROLL -->
+    <aside class="dashboard-sidebar">
+        
+<a href="index.html" class="dashboard-sidebar-brand">
+    <img src="images/Logo_Image_Spa.png"
+         alt="AuraSpa Logo"
+         class="dashboard-logo-image">
+    <span class="brand-title">
+    <span class="brand-name">
+        <span class="brand-aura">Aura</span><span class="brand-spa">Spa</span>
+    </span>
+    <small class="brand-tagline">A Natural Escape for a Better You</small>
+</span>
+</a>
+
+
+        <div class="dashboard-sidebar-scroll">
+            <span class="dashboard-sidebar-label">MY DASHBOARD</span>
+
+            <nav class="dashboard-nav">
+                <a href="#overview" class="dashboard-nav-item active" data-section="overview">
+                    <i data-lucide="layout-dashboard"></i><span>Overview</span>
+                </a>
+                <a href="#bookings" class="dashboard-nav-item" data-section="bookings">
+                    <i data-lucide="calendar-days"></i><span>My Bookings</span>
+                </a>
+                <a href="#treatments" class="dashboard-nav-item" data-section="treatments">
+                    <i data-lucide="flower-2"></i><span>Treatments</span>
+                </a>
+                <a href="#history" class="dashboard-nav-item" data-section="history">
+                    <i data-lucide="history"></i><span>Treatment History</span>
+                </a>
+                <a href="#membership" class="dashboard-nav-item" data-section="membership">
+                    <i data-lucide="crown"></i><span>Membership Plans</span>
+                </a>
+            </nav>
+
+            <span class="dashboard-sidebar-label account-label">MY ACCOUNT</span>
+
+            <nav class="dashboard-nav">
+                <a href="#notifications" class="dashboard-nav-item" data-section="notifications">
+                    <i data-lucide="bell"></i><span>Notifications</span>
+                </a>
+                <a href="#profile" class="dashboard-nav-item" data-section="profile">
+                    <i data-lucide="user-round"></i><span>My Profile</span>
+                </a>
+            </nav>
+        </div>
+
+        <div class="dashboard-sidebar-bottom">
+            <a href="./login.html" class="dashboard-nav-item logout-link">
+                <i data-lucide="log-out"></i><span>Logout</span>
+            </a>
+        </div>
+    </aside>
+
+    <!-- MAIN SCROLLABLE CONTENT -->
+    <section class="dashboard-content">
+
+        <!-- OVERVIEW -->
+        <section class="dashboard-section active" id="section-overview">
+            <div class="dashboard-header">
+                <div>
+                    <span class="dashboard-eyebrow">YOUR WELLNESS JOURNEY</span>
+                    <h1 class="dashboard-title">Welcome back, Sarah</h1>
+                    <p class="dashboard-subtitle">Take a moment for yourself. Your next step towards relaxation starts here.</p>
+                </div>
+                <button class="spa-primary-button" data-page-link="section-bookings">
+                    <i data-lucide="plus"></i> Book a Treatment
+                </button>
+            </div>
+
+            <div class="spa-welcome-banner">
+                <div>
+                    <span class="banner-eyebrow">A LITTLE TIME JUST FOR YOU</span>
+                    <h2>Relax. Restore. Reconnect.</h2>
+                    <p>Enjoy signature spa rituals designed to restore balance to your body and mind.</p>
+                    <button class="spa-outline-button" data-page-link="section-treatments">Explore Treatments</button>
+                </div>
+                <div class="banner-art"><i data-lucide="flower-2"></i></div>
+            </div>
+
+            <div class="spa-stats-grid">
+                <article class="spa-stat-card">
+                    <span class="stat-icon"><i data-lucide="calendar-check"></i></span>
+                    <div><span>Upcoming Bookings</span><h3>02</h3><small>One this week</small></div>
+                </article>
+                <article class="spa-stat-card">
+                    <span class="stat-icon"><i data-lucide="flower-2"></i></span>
+                    <div><span>Treatments Completed</span><h3>12</h3><small>Your wellness journey</small></div>
+                </article>
+                <article class="spa-stat-card">
+                    <span class="stat-icon"><i data-lucide="crown"></i></span>
+                    <div><span>Membership</span><h3>Premium</h3><small>Active membership</small></div>
+                </article>
+                <article class="spa-stat-card">
+                    <span class="stat-icon"><i data-lucide="wallet"></i></span>
+                    <div><span>Sessions Remaining</span><h3>04</h3><small>Included in your plan</small></div>
+                </article>
+            </div>
+
+            <div class="dashboard-two-column">
+                <article class="spa-card">
+                    <div class="spa-card-heading">
+                        <div><span class="card-eyebrow">COMING UP</span><h2>Next Appointment</h2></div>
+                        <button class="text-link" data-page-link="section-bookings">View all</button>
+                    </div>
+                    <div class="next-appointment">
+                        <div class="appointment-date"><strong>18</strong><span>OCT</span></div>
+                        <div class="appointment-details">
+                            <h3>Signature Relaxation Massage</h3>
+                            <p><i data-lucide="clock-3"></i> 11:00 AM · 60 minutes</p>
+                            <p><i data-lucide="map-pin"></i> AuraSpa Wellness Center</p>
+                            <span class="status-pill">Confirmed</span>
+                        </div>
+                    </div>
+                    <div class="appointment-actions">
+                        <button class="spa-secondary-button" data-page-link="section-bookings">Manage Booking</button>
+                        <button class="spa-plain-button" data-page-link="section-treatments">Explore More</button>
+                    </div>
+                </article>
+
+                <article class="spa-card">
+                    <div class="spa-card-heading">
+                        <div><span class="card-eyebrow">MADE FOR YOU</span><h2>Signature Therapies</h2></div>
+                        <button class="text-link" data-page-link="section-treatments">View all</button>
+                    </div>
+                    <div class="mini-treatment">
+                        <div class="treatment-symbol"><i data-lucide="flower-2"></i></div>
+                        <div><h3>Aromatherapy Massage</h3><p>Calming essential oils · 60 min</p></div>
+                        <strong>₹2,499</strong>
+                    </div>
+                    <div class="mini-treatment">
+                        <div class="treatment-symbol"><i data-lucide="waves"></i></div>
+                        <div><h3>Deep Tissue Massage</h3><p>Muscle relief · 60 min</p></div>
+                        <strong>₹2,999</strong>
+                    </div>
+                    <div class="mini-treatment">
+                        <div class="treatment-symbol"><i data-lucide="sparkles"></i></div>
+                        <div><h3>Rejuvenating Facial</h3><p>Skin renewal · 45 min</p></div>
+                        <strong>₹1,999</strong>
+                    </div>
+                </article>
+            </div>
+
+            <article class="spa-card membership-summary">
+                <div class="membership-icon"><i data-lucide="crown"></i></div>
+                <div class="membership-copy">
+                    <span class="card-eyebrow">YOUR MEMBERSHIP</span>
+                    <h2>Premium Wellness Plan</h2>
+                    <p>Four sessions remaining. Make time for the care you deserve.</p>
+                    <div class="membership-progress"><span></span></div>
+                    <small>8 of 12 sessions used</small>
+                </div>
+                <button class="spa-primary-button" data-page-link="section-membership">Manage Plan</button>
+            </article>
+        </section>
+
+        <!-- BOOKINGS -->
+        <section class="dashboard-section" id="section-bookings">
+            <div class="dashboard-header">
+                <div><span class="dashboard-eyebrow">PLAN YOUR ME-TIME</span><h1 class="dashboard-title">My Bookings</h1>
+                    <p class="dashboard-subtitle">View and manage your upcoming spa appointments.</p></div>
+                <button class="spa-primary-button" data-page-link="section-treatments"><i data-lucide="plus"></i> New Booking</button>
+            </div>
+            <article class="spa-card">
+                <div class="spa-card-heading"><h2>Upcoming Appointments</h2><span class="status-pill">2 Scheduled</span></div>
+                <div class="booking-row">
+                    <div class="booking-date"><strong>18</strong><span>OCT</span></div>
+                    <div class="booking-info"><h3>Signature Relaxation Massage</h3><p>60 minutes · 11:00 AM</p><span class="muted-text">AuraSpa Wellness Center</span></div>
+                    <span class="status-pill">Confirmed</span>
+                    <button class="spa-secondary-button cancel-booking">Cancel</button>
+                </div>
+                <div class="booking-row">
+                    <div class="booking-date"><strong>24</strong><span>OCT</span></div>
+                    <div class="booking-info"><h3>Aromatherapy Massage</h3><p>60 minutes · 03:30 PM</p><span class="muted-text">AuraSpa Wellness Center</span></div>
+                    <span class="status-pill">Confirmed</span>
+                    <button class="spa-secondary-button cancel-booking">Cancel</button>
+                </div>
+            </article>
+        </section>
+
+        <!-- TREATMENTS -->
+        <section class="dashboard-section" id="section-treatments">
+            <div class="dashboard-header"><div><span class="dashboard-eyebrow">DISCOVER YOUR RITUAL</span><h1 class="dashboard-title">Our Treatments</h1>
+                <p class="dashboard-subtitle">Choose a treatment that suits your wellness needs.</p></div></div>
+            <div class="treatment-grid">
+                <article class="spa-card treatment-card"><div class="treatment-feature-icon"><i data-lucide="flower-2"></i></div><span class="card-eyebrow">SIGNATURE THERAPY</span><h2>Relaxation Massage</h2><p>A soothing full-body massage designed to help you unwind and feel restored.</p><div class="treatment-meta"><span>60 minutes</span><strong>₹2,499</strong></div><button class="spa-primary-button book-treatment" data-treatment="Relaxation Massage">Book Treatment</button></article>
+                <article class="spa-card treatment-card"><div class="treatment-feature-icon"><i data-lucide="droplets"></i></div><span class="card-eyebrow">AROMATIC RITUAL</span><h2>Aromatherapy Massage</h2><p>Gentle massage paired with aromatic oils for a calming spa experience.</p><div class="treatment-meta"><span>60 minutes</span><strong>₹2,499</strong></div><button class="spa-primary-button book-treatment" data-treatment="Aromatherapy Massage">Book Treatment</button></article>
+                <article class="spa-card treatment-card"><div class="treatment-feature-icon"><i data-lucide="waves"></i></div><span class="card-eyebrow">RESTORE & RELEASE</span><h2>Deep Tissue Massage</h2><p>A focused massage experience for areas that need extra attention.</p><div class="treatment-meta"><span>60 minutes</span><strong>₹2,999</strong></div><button class="spa-primary-button book-treatment" data-treatment="Deep Tissue Massage">Book Treatment</button></article>
+                <article class="spa-card treatment-card"><div class="treatment-feature-icon"><i data-lucide="sparkles"></i></div><span class="card-eyebrow">SKIN RITUAL</span><h2>Rejuvenating Facial</h2><p>A refreshing facial experience focused on comfort and skin care.</p><div class="treatment-meta"><span>45 minutes</span><strong>₹1,999</strong></div><button class="spa-primary-button book-treatment" data-treatment="Rejuvenating Facial">Book Treatment</button></article>
+            </div>
+        </section>
+
+        <!-- HISTORY -->
+        <section class="dashboard-section" id="section-history">
+            <div class="dashboard-header"><div><span class="dashboard-eyebrow">YOUR WELLNESS RECORD</span><h1 class="dashboard-title">Treatment History</h1><p class="dashboard-subtitle">Look back at your completed spa experiences.</p></div></div>
+            <article class="spa-card">
+                <div class="spa-card-heading"><h2>Completed Treatments</h2></div>
+                <div class="table-wrapper"><table class="spa-table"><thead><tr><th>Treatment</th><th>Date</th><th>Duration</th><th>Amount</th><th>Status</th></tr></thead><tbody>
+                    <tr><td>Relaxation Massage</td><td>05 Oct 2026</td><td>60 min</td><td>₹2,499</td><td><span class="status-pill">Completed</span></td></tr>
+                    <tr><td>Rejuvenating Facial</td><td>21 Sep 2026</td><td>45 min</td><td>₹1,999</td><td><span class="status-pill">Completed</span></td></tr>
+                    <tr><td>Aromatherapy Massage</td><td>10 Sep 2026</td><td>60 min</td><td>₹2,499</td><td><span class="status-pill">Completed</span></td></tr>
+                </tbody></table></div>
+            </article>
+        </section>
+
+        <!-- MEMBERSHIP -->
+        <section class="dashboard-section" id="section-membership">
+            <div class="dashboard-header"><div><span class="dashboard-eyebrow">YOUR SELF-CARE, REIMAGINED</span><h1 class="dashboard-title">Membership Plans</h1><p class="dashboard-subtitle">Manage your current plan or discover more ways to unwind.</p></div></div>
+            <article class="spa-card active-membership">
+                <div class="membership-icon"><i data-lucide="crown"></i></div>
+                <span class="card-eyebrow">CURRENT MEMBERSHIP</span><h2>Premium Wellness Plan</h2>
+                <p>Enjoy your included treatments and member benefits.</p>
+                <div class="membership-progress"><span></span></div><p class="muted-text">8 of 12 sessions used · 4 sessions remaining</p>
+                <div class="membership-facts"><span><strong>Plan status</strong>Active</span><span><strong>Renewal date</strong>01 Nov 2026</span><span><strong>Member benefits</strong>Priority booking</span></div>
+            </article>
+            <div class="spa-card membership-plan-card"><span class="card-eyebrow">YOUR NEXT CHAPTER</span><h2>Make more room for relaxation.</h2><p>Contact our team to explore plan upgrades and available membership options.</p><a class="spa-primary-button" href="./contact.html">Contact Spa</a></div>
+        </section>
+
+        <!-- NOTIFICATIONS -->
+        <section class="dashboard-section" id="section-notifications">
+            <div class="dashboard-header"><div><span class="dashboard-eyebrow">STAY IN THE LOOP</span><h1 class="dashboard-title">Notifications</h1><p class="dashboard-subtitle">Your booking updates and membership reminders.</p></div></div>
+            <article class="spa-card notification-list">
+                <div class="notification-row"><span class="stat-icon"><i data-lucide="calendar-check"></i></span><div><h3>Booking confirmed</h3><p>Your Signature Relaxation Massage is booked for 18 October at 11:00 AM.</p><small>Today</small></div></div>
+                <div class="notification-row"><span class="stat-icon"><i data-lucide="crown"></i></span><div><h3>Membership update</h3><p>You have four treatment sessions remaining in your Premium Wellness Plan.</p><small>Yesterday</small></div></div>
+                <div class="notification-row"><span class="stat-icon"><i data-lucide="flower-2"></i></span><div><h3>A moment for yourself</h3><p>Explore our signature therapies and plan your next relaxing visit.</p><small>3 days ago</small></div></div>
+            </article>
+        </section>
+
+        <!-- PROFILE -->
+        <section class="dashboard-section" id="section-profile">
+            <div class="dashboard-header"><div><span class="dashboard-eyebrow">YOUR PERSONAL DETAILS</span><h1 class="dashboard-title">My Profile</h1><p class="dashboard-subtitle">Keep your contact details up to date.</p></div></div>
+            <form class="spa-card profile-form" id="profileForm">
+                <div class="profile-form-heading"><div class="user-avatar large-avatar">S</div><div><h2>Sarah Johnson</h2><p>Premium Member</p></div></div>
+                <div class="profile-fields">
+                    <label>Full Name<input name="fullName" type="text" value="Sarah Johnson" required></label>
+                    <label>Email Address<input name="email" type="email" value="sarah@example.com" required></label>
+                    <label>Phone Number<input name="phone" type="tel" value="+91 98765 43210"></label>
+                    <label>Preferred Treatment<select name="preferredTreatment"><option>Relaxation Massage</option><option>Aromatherapy Massage</option><option>Deep Tissue Massage</option><option>Rejuvenating Facial</option></select></label>
+                </div>
+                <button type="submit" class="spa-primary-button">Save Changes</button>
+            </form>
+        </section>
+
+        <footer class="dashboard-footer">© 2026 AuraSpa. Your wellness, our care.</footer>
+    </section>
+</main>
+  <script src="js/dashboard.js" defer></script>
+</body>
+</html>
